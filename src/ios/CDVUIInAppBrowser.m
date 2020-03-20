@@ -930,7 +930,7 @@ static CDVUIInAppBrowser* instance = nil;
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
-    return UIStatusBarStyleLightContent;
+    return UIStatusBarStyleDefault;
 }
 
 - (BOOL)prefersStatusBarHidden {
