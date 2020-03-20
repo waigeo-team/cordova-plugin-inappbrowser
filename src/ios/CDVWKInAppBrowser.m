@@ -909,7 +909,7 @@ BOOL isExiting = FALSE;
         [self.toolbar setItems:@[self.closeButton, flexibleSpaceButton, self.backButton, fixedSpaceButton, self.forwardButton]];
     }
     
-    self.view.backgroundColor = [UIColor colorWithRed: 0.0 / 255.0 green: 117.0 / 255.0 blue: 255.0 / 255.0 alpha:1];
+    self.view.backgroundColor = [UIColor grayColor];
     [self.view addSubview:self.toolbar];
     [self.view addSubview:self.addressLabel];
     [self.view addSubview:self.spinner];
@@ -1136,7 +1136,6 @@ BOOL isExiting = FALSE;
 
         self.webView.frame = viewBounds;
         [[UIApplication sharedApplication] setStatusBarStyle:[self preferredStatusBarStyle]];
-        [[UIApplication sharedApplication] setStatusBarColor:[UIColor whiteColor]];
     }
     [self rePositionViews];
     

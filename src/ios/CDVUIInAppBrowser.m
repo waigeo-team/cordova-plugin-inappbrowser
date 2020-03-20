@@ -608,7 +608,6 @@ static CDVUIInAppBrowser* instance = nil;
     if (IsAtLeastiOSVersion(@"7.0")) {
         if (_previousStatusBarStyle != -1) {
             [[UIApplication sharedApplication] setStatusBarStyle:_previousStatusBarStyle];
-            [[UIApplication sharedApplication] setStatusBarColor:[UIColor whiteColor]];
         }
     }
 
@@ -778,7 +777,7 @@ static CDVUIInAppBrowser* instance = nil;
         [self.toolbar setItems:@[self.closeButton, flexibleSpaceButton, self.backButton, fixedSpaceButton, self.forwardButton]];
     }
 
-    self.view.backgroundColor = [UIColor colorWithRed: 0.0 / 255.0 green: 117.0 / 255.0 blue: 255.0 / 255.0 alpha:1];
+    self.view.backgroundColor = [UIColor grayColor];
     [self.view addSubview:self.toolbar];
     [self.view addSubview:self.addressLabel];
     [self.view addSubview:self.spinner];
