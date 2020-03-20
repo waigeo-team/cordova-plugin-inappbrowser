@@ -308,7 +308,7 @@ static CDVWKInAppBrowser* instance = nil;
     __block CDVInAppBrowserNavigationController* nav = [[CDVInAppBrowserNavigationController alloc]
                                                         initWithRootViewController:self.inAppBrowserViewController];
     nav.orientationDelegate = self.inAppBrowserViewController;
-    nav.navigationBarHidden = YES;
+    //nav.navigationBarHidden = YES;
     nav.modalPresentationStyle = self.inAppBrowserViewController.modalPresentationStyle;
     
     __weak CDVWKInAppBrowser* weakSelf = self;
