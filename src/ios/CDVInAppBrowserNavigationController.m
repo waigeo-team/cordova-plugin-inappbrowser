@@ -37,8 +37,8 @@
     if (@available(iOS 11.0, *)) {
         hasTopNotch = [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.top > 20.0;
     }
-    if(hasTopNotch){
-        statusBarFrame.size.height = 0;
+    if (hasTopNotch){
+        statusBarFrame.size.height = [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.top;
     } else {
         statusBarFrame.size.height = STATUSBAR_HEIGHT;
     }

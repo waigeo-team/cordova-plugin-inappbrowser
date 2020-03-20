@@ -909,7 +909,7 @@ BOOL isExiting = FALSE;
         [self.toolbar setItems:@[self.closeButton, flexibleSpaceButton, self.backButton, fixedSpaceButton, self.forwardButton]];
     }
     
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = [UIColor colorWithRed: 0.0 / 255.0 green: 117.0 / 255.0 blue: 187.0 / 255.0 alpha:1];
     [self.view addSubview:self.toolbar];
     [self.view addSubview:self.addressLabel];
     [self.view addSubview:self.spinner];
@@ -1065,7 +1065,7 @@ BOOL isExiting = FALSE;
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
-    return UIStatusBarStyleDefault;
+    return UIStatusBarStyleLightContent;
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -1126,9 +1126,12 @@ BOOL isExiting = FALSE;
         if (@available(iOS 11.0, *)) {
             hasTopNotch = [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.top > 20.0;
         }
-        if(!hasTopNotch){
+        if (!hasTopNotch) {
             viewBounds.origin.y = STATUSBAR_HEIGHT;
             viewBounds.size.height = viewBounds.size.height - STATUSBAR_HEIGHT;
+        } else {
+            viewBounds.origin.y = [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.top;
+            viewBounds.size.height = viewBounds.size.height - [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.top;
         }
 
         self.webView.frame = viewBounds;
