@@ -251,7 +251,7 @@ static CDVUIInAppBrowser* instance = nil;
     __block CDVInAppBrowserNavigationController* nav = [[CDVInAppBrowserNavigationController alloc]
                                    initWithRootViewController:self.inAppBrowserViewController];
     nav.orientationDelegate = self.inAppBrowserViewController;
-    //nav.navigationBarHidden = YES;
+    nav.navigationBarHidden = YES;
     nav.modalPresentationStyle = self.inAppBrowserViewController.modalPresentationStyle;
 
     __weak CDVUIInAppBrowser* weakSelf = self;
@@ -608,6 +608,7 @@ static CDVUIInAppBrowser* instance = nil;
     if (IsAtLeastiOSVersion(@"7.0")) {
         if (_previousStatusBarStyle != -1) {
             [[UIApplication sharedApplication] setStatusBarStyle:_previousStatusBarStyle];
+            [[UIApplication sharedApplication] setStatusBarColor:[UIColor whiteColor]];
         }
     }
 
